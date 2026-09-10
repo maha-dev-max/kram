@@ -1,0 +1,1 @@
+export function Logo() { return <div className="flex items-center gap-2"><span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#31473b] text-xs font-bold text-white">K</span><span className="text-xl font-bold tracking-[.2em] text-[#31473b]">KRAM</span></div> }
