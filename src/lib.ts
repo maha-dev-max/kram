@@ -21,9 +21,9 @@ export const completionPercent = (habits: Habit[], records: DailyRecord[], date 
   if (!habits.length) return 0
   return Math.round((habits.filter((h) => getStatus(h.id, date, records) === 'completed').length / habits.length) * 100)
 }
-export const streakFor = (habit: Habit, records: DailyRecord[]) => {
+export const streakFor = (habit: Habit, records: DailyRecord[], endDate = localDateKey()) => {
   let streak = 0
-  const cursor = new Date()
+  const cursor = dateFromKey(endDate)
   while (getStatus(habit.id, localDateKey(cursor), records) === 'completed') {
     streak += 1
     cursor.setDate(cursor.getDate() - 1)
